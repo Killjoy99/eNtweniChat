@@ -1,0 +1,123 @@
+<SettingsChatsScreen>
+    name: "settings_chats"
+    on_leave: app.previous_screen = self.name
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Chats"
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        MDList:
+            MDDivider:
+
+            MDListItem:
+                on_release: root.change_theme_dialog()
+
+                MDListItemLeadingIcon:
+                    icon: "theme-light-dark"
+
+                MDListItemHeadlineText:
+                    text: "Theme"
+                MDListItemSupportingText:
+                    text: "System Default"
+
+            MDListItem:
+                on_release: root.change_color_dialog()
+
+                MDListItemLeadingIcon:
+                    icon: "color-helper"
+
+                MDListItemHeadlineText:
+                    text: "Colors"
+                MDListItemSupportingText:
+                    text: "Default - Teal"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "image"
+
+                MDListItemHeadlineText:
+                    text: "Wallpaper"
+            MDDivider:
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: ""
+
+                MDListItemHeadlineText:
+                    text: "Enter is Send"
+                MDListItemSupportingText:
+                    text: "Enter will send your message"
+                MDSwitch:
+                    icon_active: "check"
+                    pos_hint: {'center_y': .5}
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: ""
+
+                MDListItemHeadlineText:
+                    text: "Media visibility"
+                MDListItemTertiaryText:
+                    text: "Show newly downloaded media in your device's gallery"
+                MDSwitch:
+                    icon_active: "check"
+                    pos_hint: {'center_y': .5}
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: ""
+
+                MDListItemHeadlineText:
+                    text: "Font size"
+                MDListItemSupportingText:
+                    text: "Medium"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: ""
+
+                MDListItemHeadlineText:
+                    text: "Keep chats archived"
+                MDListItemSupportingText:
+                    text: "Archived chats will remain archived when you receive a new message"
+                MDSwitch:
+                    active: True
+                    icon_active: "check"
+                    pos_hint: {'center_y': .5}
+            MDDivider:
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "cloud-upload"
+
+                MDListItemHeadlineText:
+                    text: "Chat backup"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "account-switch"
+
+                MDListItemHeadlineText:
+                    text: "Transfer chats"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "history"
+
+                MDListItemHeadlineText:
+                    text: "Chat history"

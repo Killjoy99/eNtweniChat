@@ -1,0 +1,49 @@
+<HomeScreen>
+    name: "home"
+    md_bg_color: app.theme_cls.backgroundColor
+    on_enter: default.active = True
+
+    Root:
+        id: home_screen_manager
+
+        ChatsScreen:
+            # name: "Chats"
+        UpdatesScreen:
+            # name: "Updates"
+        CommunitiesScreen:
+            # name: "Communities"
+        CallsScreen:
+            # name: "Calls"
+
+    MDNavigationBar:
+        on_switch_tabs: root.on_switch_tabs(*args)
+
+        MDNavigationItem:
+            id: default
+            # active: True
+            MDNavigationItemIcon:
+                icon: 'message-text-outline'
+
+            MDNavigationItemLabel:
+                text: 'Chats'
+
+        MDNavigationItem:
+            MDNavigationItemIcon:
+                icon: 'chat-processing-outline'
+
+            MDNavigationItemLabel:
+                text: 'Updates'
+
+        MDNavigationItem:
+            MDNavigationItemIcon:
+                icon: 'account-group-outline'
+
+            MDNavigationItemLabel:
+                text: 'Communities'
+        
+        MDNavigationItem:
+            MDNavigationItemIcon:
+                icon: 'phone-outline'
+
+            MDNavigationItemLabel:
+                text: 'Calls'

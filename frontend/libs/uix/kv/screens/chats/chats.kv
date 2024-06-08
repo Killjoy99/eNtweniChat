@@ -1,0 +1,55 @@
+<ChatsScreen>
+# MDScreen:
+    
+    name: "Chats"
+    md_bg_color: self.theme_cls.backgroundColor
+    # on_parent: app.populate_contacts()
+    
+    MDTopAppBar:
+        id: topbar
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+        MDTopAppBarTitle:
+            #: set my_color '#008080'
+            markup: True
+            text: "[color=%s]eNtweniChat[/color]"%(app.light_theme_color)
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "camera-outline"
+                on_release: root.manager.push("camera")
+
+            MDActionTopAppBarButton:
+                icon: "magnify"
+                on_release: root.load_chats()
+
+            MDActionTopAppBarButton:
+                id: menu_caller
+                icon: "dots-vertical"
+                on_release: root.menu().open()
+
+    MDScrollView:
+        do_scroll_y: True
+        pos_hint: {'top': 0.9}
+        MDList:
+            id: chat_list_container
+
+            # ChatListItem:
+            #     # source: root.avatar
+            #     source: "data/images/profile.jpg"
+                # text: root.text
+
+    MDIconButton:
+        theme_icon_color: 'Custom'
+        icon_color: "black"
+        icon: "message-plus"
+        pos_hint: {"right": .97, "center_y": 0.15}
+        style: "filled"
+        size_hint: (None, None)
+        size: dp(56), dp(56)
+        radius: dp(10)
+        on_release:
+            root.manager.push("new_chat")
+

@@ -1,0 +1,51 @@
+<CallsScreen>
+    name: "Calls"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+        MDTopAppBarTitle:
+            text: "Calls"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "camera-outline"
+            MDActionTopAppBarButton:
+                icon: "magnify"
+            MDActionTopAppBarButton:
+                icon: "dots-vertical"
+                # on_release: app.menu.open()
+
+    MDScrollView:
+        do_scroll_y: True
+        pos_hint: {'top': 0.9}
+
+        MDList:
+            id: call_logs_container
+            MDListItem:
+                on_release:
+                    root.manager.push("call_link", "up")
+                icon_color: rgba("f0f0f0")
+
+                MDListItemLeadingIcon:
+                    icon: "link"
+                MDListItemHeadlineText:
+                    text: "Create call link"
+
+                MDListItemSupportingText:
+                    text: "Share a link for your eNtweniChat call"
+
+    MDIconButton:
+        style: "filled"
+        size_hint: (None, None)
+        size: dp(56), dp(56)
+        radius: dp(10)
+        icon: "phone-plus"
+        pos_hint: {"center_x": .9, "center_y": .15}
+        on_release:
+            root.go_to_screen("new_call")

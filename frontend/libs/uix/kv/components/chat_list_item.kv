@@ -1,0 +1,23 @@
+<ChatListItem>
+    divider: True
+    on_release: root.manager.push("chat")
+
+    MDListItemLeadingAvatar:
+        source: root.avatar
+
+    MDListItemHeadlineText:
+        id: contact_name
+        text: "Test" #root.contact_name
+
+    MDListItemSupportingText:
+        text: root.last_message
+
+    MDListItemTertiaryText:
+        pos_hint: {"x": 0.9}
+        text: root.timestamp
+
+    MDListItemTrailingIcon:
+        icon: "check-all"
+        # icon: ""
+        MDBadge:
+            text: "1"

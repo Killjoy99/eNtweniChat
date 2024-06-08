@@ -1,0 +1,88 @@
+<SettingsAccountScreen>
+    name: "settings_account"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Account"
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        MDList:
+            MDDivider:
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "shield-half-full"
+
+                MDListItemHeadlineText:
+                    text: "Security notifications"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "account-key"
+
+                MDListItemHeadlineText:
+                    text: "Passkeys"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "email"
+
+                MDListItemHeadlineText:
+                    text: "Email addresses"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "dots-horizontal-circle-outline"
+
+                MDListItemHeadlineText:
+                    text: "Two step verification"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "account-switch"
+
+                MDListItemHeadlineText:
+                    text: "Change number"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "file-document"
+
+                MDListItemHeadlineText:
+                    text: "Request account info"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "account-plus"
+
+                MDListItemHeadlineText:
+                    text: "Add account"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    # pos_hint: {'center_y': .5}
+                    icon: "delete"
+
+                MDListItemHeadlineText:
+                    text: "Delete account"

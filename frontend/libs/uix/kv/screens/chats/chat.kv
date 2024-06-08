@@ -1,0 +1,89 @@
+<ChatScreen>
+    id: chats_screen
+    name: "chat_screen"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        pos_hint: {'top': 1}
+        adaptive_height: True
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+                    
+            MDListItemLeadingAvatar:
+                id: profile_picture
+                pos_hint: {'center_y': .5}
+                source: root.avatar
+
+        MDTopAppBarTitle:
+            id: contact_name
+            text: root.user_name
+
+        MDTopAppBarTrailingButtonContainer:
+            pos_hint: {'right': 1}
+
+            MDActionTopAppBarButton:
+                icon: "video"
+                # on_release: app.connection_manager.get_user_messages()
+
+            MDActionTopAppBarButton:
+                icon: "phone"
+                # on_release: app.connection_manager.get_user_messages()
+
+            MDActionTopAppBarButton:
+                id: menu_caller
+                icon: "dots-vertical"
+                # on_release: app.get_user_messages(app.my_phone_number)
+                # on_release:
+                    # app.tabs_dropdown_menu()#.open()
+                    # app.chats_dropdown_menu().open()
+                    # make selection based on the screen underneath
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: root.height - root.ids.appbar.height
+        pos_hint: {'top': .9}
+        padding: dp(10)
+
+        MDScrollView:
+        # Add a function to always scroll to the last message
+            do_scroll_y: True
+            scroll_y: 0
+            bar_width: 0            # make the scroll bar disappear
+
+            MDList:
+                spacing: dp(5)
+                padding: [0,10,0,10]
+
+                ChatBubble:
+
+        MDBoxLayout:
+            id: input_layout
+            # padding: [dp(0),dp(5),dp(0),dp(0)]
+            orientation: 'horizontal'
+            pos_hint: {"bottom": 1}
+            width: root.width
+            adaptive_height: True
+            spacing: dp(10)
+            padding: dp(10)
+
+            ChatTextField:
+                id: textInput
+
+            MDFabButton:
+                id: send_button
+                color_map: "secondary"
+                # icon: "microphone-outline"
+                icon: "send-outline"
+                rotation: 45
+                style: "small"
+                on_release:
+                    app.send_message(app.my_phone_number, "263773363041", textInput.ids.textInput.text)
+                    textInput.ids.textInput.text = ""

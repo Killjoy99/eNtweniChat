@@ -1,0 +1,42 @@
+<WelcomeScreen>
+    name: "welcome"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDLabel:
+        adaptive_size: True
+        markup: True
+        font_size: sp(12)
+        text: "[size=56sp][b][color=#008080]e[i]N[/i]tweni[i]C[/i]hat[/color][/b][/size]"
+        pos_hint: {'center_x': 0.5, "center_y": .9}
+
+    MDCard:
+        # radius: root.width / 2
+        # adaptive_size: True
+        size_hint: None, None
+        radius: dp(300)
+        md_bg_color: 1,0,0,1
+        width: root.width / 2
+        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        height: root.width / 2
+        Image:
+            source: root.logo
+
+    MDLabel:
+        adaptive_size: True
+        markup: True
+        multiline: True
+        font_size: sp(9)
+        halign: 'center'
+        text: "[size=15sp]Read our [b][color=#008080][ref=https://chat.entweni.com/privacy_policy]Privacy Policy[/ref][/color][/b]. Tap 'Agree and continue' \nto accept the [b][color=#008080][ref=https://chat.entweni.com/terms]Terms of Service.[/ref][/color][/b][/size]"
+        pos_hint: {'center_x': 0.5, "center_y": .3}
+        on_ref_press: 
+            import webbrowser
+            webbrowser.open(args[1])
+            print(f"Ref {args[1]} Pressed")
+
+    MDButton:
+        on_release: root.manager.push("register", "up")
+        pos_hint: {"center_x": .5, "center_y": .1}
+        radius: dp(5)
+        MDButtonText:
+            text: "AGREE AND CONTINUE"

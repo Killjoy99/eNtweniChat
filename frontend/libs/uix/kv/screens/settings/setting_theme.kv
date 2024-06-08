@@ -1,0 +1,56 @@
+<ThemeScreen>
+    name: "theme"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "eNtweniBookings"
+
+        # MDTopAppBarTrailingButtonContainer:
+
+        #     MDActionTopAppBarButton:
+        #         icon: "sticker-plus-outline"
+        #         # on_release: app.simulate_button_click()
+
+        #     MDActionTopAppBarButton:
+        #         icon: "magnify"
+        #         # on_release: app.send_request("127.0.0.1:8000", "/")
+
+        #     MDActionTopAppBarButton:
+        #         id: options_button
+        #         icon: "dots-vertical"
+        #         on_release: root.dropdown_menu().open()
+        #             # make selection based on the screen underneath
+
+    MDCard:
+        orientation: "vertical"
+        padding: 0, 0, 0 , "36dp"
+        size_hint: .9, .5
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDLabel:
+            text: "Theme style - {}".format(app.theme_cls.theme_style)
+            halign: "center"
+            valign: "center"
+            bold: True
+            font_style: "Display"
+            role: "small"
+
+        MDButton:
+            on_release: root.switch_theme_style()
+            pos_hint: {"center_x": .5}
+
+            MDButtonText:
+                text: "Change theme"

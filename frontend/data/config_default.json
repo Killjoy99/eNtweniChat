@@ -1,0 +1,60 @@
+{
+    "APP_ICON": "data/icon.png",
+    "Developer": "Philani Dlamini",
+
+    "SETTINGS": {
+        "ACCOUNT": {
+            "EMAIL_ADDRESSES": {
+                "primary": "example@entweni.com",
+                "secondary": "personal@gmail.com"
+            },
+            "OAUTH": {
+                "email": "personal@gmail.com",
+                "is_on": "False",
+                "phone_number": 263776471033,
+                "type": "phone"
+            },
+            "PASSKEYS": {
+                "1": 123456789,
+                "2": 987654321
+            },
+            "security_notifications_on": "False"
+        },
+
+        "APP_LANGUAGE": "en-us",
+
+        "CHAT": {
+            "BACKUP": {
+                "emai": "None",
+                "frequency": "Never"
+            },
+            "enter_is_send": "False",
+            "font_size": "medium",
+            "keep_chats_archived": "False",
+            "media_visible": "False",
+            "primary_palette": "Teal",
+            "theme": "Dark",
+            "wallpaper": "data/images/wallpaper.jpg"
+        },
+
+        "HELP": {
+            "api": "chat.entweni.io",
+            "api_version": "0.0.1",
+            "app_name": "eNtweniChat",
+            "app_version": "0.0.1"
+        },
+
+        "USER": {
+            "name": "serpent99",
+            "phone_number": 263773363041
+        },
+
+        "SERVER": {
+            "ports": [80, 443],
+            "https": "//ec2-16-171-172-178.eu-north-1.compute.amazonaws.com:443/chat",
+            "http": "//ec2-16-171-172-178.eu-north-1.compute.amazonaws.com:80/chat",
+            "wss": "//ec2-16-171-172-178.eu-north-1.compute.amazonaws.com:443/chat",
+            "ws": "//ec2-16-171-172-178.eu-north-1.compute.amazonaws.com:443/chat"
+        }
+    }
+}

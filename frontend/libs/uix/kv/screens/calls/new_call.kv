@@ -1,0 +1,162 @@
+<NewCallScreen>
+    name: "new_call"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.push_replacement("home")
+
+        MDTopAppBarTitle:
+            text: "Select contact"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "magnify"
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        do_scroll_y: True
+        bar_width: 0
+
+        MDList:
+            adaptive_height: True
+
+            MDListItem:
+                on_release:
+                    root.manager.push("call_link")
+                MDListItemLeadingIcon:
+                    icon: "link"
+
+                MDListItemHeadlineText:
+                    text: "New call link"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "account-plus"
+
+                MDListItemHeadlineText:
+                    text: "New contact"
+
+                MDListItemTrailingIcon:
+                    icon: "qrcode"
+
+
+            MDListItem:
+                MDListItemTertiaryText:
+                    text: "Frequently contacted"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "Mukaka Wamuna"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "KungFu Lost"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "A Dube"
+
+
+            MDListItem:
+                MDListItemTertiaryText:
+                    text: "Contacts on eNtweniChat"
+
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "Tendai Chipara"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "KungFu Lost"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "A Dube"
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "Tendai Chipara"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "KungFu Lost"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "A Dube"
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "Tendai Chipara"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "KungFu Lost"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "A Dube"
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "Tendai Chipara"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "KungFu Lost"
+
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    icon: "imgages/profile.jpg"
+
+                MDListItemHeadlineText:
+                    text: "A Dube"

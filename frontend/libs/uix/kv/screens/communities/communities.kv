@@ -1,0 +1,33 @@
+<CommunitiesScreen>
+    name: "Communities"
+    md_bg_color: self.theme_cls.backgroundColor
+    
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+        MDTopAppBarTitle:
+            text: "Communities"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "camera-outline"
+
+            MDActionTopAppBarButton:
+                icon: "dots-vertical"
+                # on_release: app.menu.open()
+
+    MDScrollView:
+        pos_hint: {"top": 0.9}
+        MDList:
+            MDListItem:
+                MDListItemLeadingIcon:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    icon: "account-group-outline"
+
+                MDListItemHeadlineText:
+                    text: "New community"
+
+            MDDivider:
