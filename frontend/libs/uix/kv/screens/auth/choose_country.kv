@@ -1,0 +1,26 @@
+<ChooseCountryScreen>
+    name: "choose_country"
+    md_bg_color: root.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Choose a country"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "magnify"
+                # on_release: app.menu.open()
+
+        MDScrollView:
+            

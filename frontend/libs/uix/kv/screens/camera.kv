@@ -1,0 +1,39 @@
+<CameraScreen>:
+    md_bg_color: app.theme_cls.backgroundColor
+    # on_enter: camera.play: True
+    on_enter: print(f"{self.parent.history}")
+    on_leave: camera.play=False
+
+    MDTopAppBar:
+        id: appbar
+        type: "small"
+        pos_hint: {'top': 1}
+        
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.push_replacement("home")
+
+    Camera:
+        id: camera
+        resolution: (640, 1080)
+        play: True
+        
+    MDBoxLayout:
+        oriantation: "horizontal"
+        pos_hint: {"center_x": .5}
+
+        MDButton:
+            # on_press: camera.play = not camera.play
+            size_hint_y: None
+            height: '48dp'
+            pos_hint: {'center_x': 0.5}
+            MDButtonText:
+                text: 'Video'
+        MDButton:
+            on_press: root.capture()
+            size_hint_y: None
+            height: '48dp'
+            pos_hint: {'center_x': 0.5}
+            MDButtonText:
+                text: 'Capture'

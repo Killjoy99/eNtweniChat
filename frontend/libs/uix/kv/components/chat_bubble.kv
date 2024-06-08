@@ -1,0 +1,67 @@
+<ChatBubble>
+    orientation: 'vertical'
+    id: chatbId
+    md_bg_color: app.theme_cls.backgroundColor
+    size_hint_y: None
+    height: dp(60)
+    adaptive_height: True
+    width: root.width
+    padding: [10, 0, 10, 0]
+
+    MDBoxLayout:
+        size_hint: None,None
+        height: message_content.height + time.height + 10
+        width: message_content.width + wid1.width + wid3.width
+        pos_hint: {"right": 1} if chatbId == "you" else {"left": 1}
+        radius: [10, 10, -5, 10] if self.pos_hint == {"right": 1} else [10, 10, 10, -5]
+        # md_bg_color: app.theme_cls.darkest if app.theme_cls.theme_style == "Light" else app.theme_cls.bg_dark
+
+        Spacer:
+            id: wid1
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            MDLabel:
+                id: message_content
+                text: root.msg
+                halign: "left"
+                size_hint_y: None
+
+            MDBoxLayout:
+                id: timeAndIcon
+                size_hint_y: None
+                height: time.height
+                width: time.width + receiptIcon.width
+                spacing: 3
+
+                MDLabel:
+                    id: time
+                    text: root.time
+                    halign: "right"
+                    bold: True
+                    size_hint_y: None
+                    font_size: 9
+                    text_size: None, None
+                    color: [.8, .8, .8, 1]
+
+                MDIcon:
+                    id: receiptIcon
+                    #: set iconDict {"read": "check-all", "waiting": "clock-time-three-outline", "delivered": "check"}
+                    theme_text_color: "Custom"
+                    icon: iconDict[chatbId.isRead] if chatbId.isRead in iconDict.keys() else ""
+                    size_hint: None, None
+                    font_size: 12
+                    size: 12, 12
+                    color: time.color
+
+            Spacer:
+                id: wid2
+
+        Spacer:
+            id: wid3
+
+<Spacer@MDWidget>:
+    id: wid
+    width: 5
+    size_hint: None,None

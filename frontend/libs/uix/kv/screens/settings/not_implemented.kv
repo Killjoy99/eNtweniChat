@@ -1,0 +1,22 @@
+MDScreen:
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Not Implemented"
+
+    MDLabel:
+        text: 'NOT IMPLEMENTED YET'
+        color: "red"

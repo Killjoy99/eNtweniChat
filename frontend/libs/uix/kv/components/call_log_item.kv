@@ -1,0 +1,14 @@
+<CallLogItem>
+    on_release: app.show_example_calllog_item()
+
+    MDListItemLeadingAvatar:
+        source: root.avatar
+
+    MDListItemHeadlineText:
+        text: root.contact_name
+
+    MDListItemTertiaryText:
+        text: root.timestamp
+
+    MDListItemTrailingIcon:
+        icon: root.call_type

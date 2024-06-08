@@ -1,0 +1,166 @@
+{
+    "welcome": {
+        "import": "from libs.uix.baseclass.screens.auth import WelcomeScreen",
+        "object": "WelcomeScreen()",
+        "kv": "libs/uix/kv/screens/auth/welcome.kv"
+    },
+    "register": {
+        "import": "from libs.uix.baseclass.screens.auth import RegisterScreen",
+        "object": "RegisterScreen()",
+        "kv": "libs/uix/kv/screens/auth/register.kv"
+    },
+    "choose_country": {
+        "import": "from libs.uix.baseclass.screens.auth import ChooseCountryScreen",
+        "object": "ChooseCountryScreen()",
+        "kv": "libs/uix/kv/screens/auth/choose_country.kv"
+    },
+    "auth": {
+        "import": "from libs.uix.baseclass.screens.auth import AuthScreen",
+        "object": "AuthScreen()",
+        "kv": "libs/uix/kv/screens/auth/auth_screen.kv"
+    },
+
+
+    "home": {
+        "import": "from libs.uix.baseclass.screens.home import HomeScreen",
+        "object": "HomeScreen()",
+        "kv": "libs/uix/kv/screens/home_screen.kv"
+    },
+    "test": {
+        "import": "from libs.uix.baseclass.screens.home import TestScreen",
+        "object": "TestScreen()",
+        "kv": "libs/uix/kv/screens/test_screen.kv"
+    },
+
+    "communities": {
+        "import": "from libs.uix.baseclass.screens.communities import CommunitiesScreen",
+        "object": "CommunitiesScreen()",
+        "kv": "libs/uix/kv/screens/communities/communities.kv"
+    },
+
+    "calls": {
+        "import": "from libs.uix.baseclass.screens.calls import CallsScreen",
+        "object": "CallsScreen()",
+        "kv": "libs/uix/kv/screens/calls/calls.kv"
+    },
+    "call_info": {
+        "import": "from libs.uix.baseclass.screens.calls import CallInfoScreen",
+        "object": "CallInfoScreen()",
+        "kv": "libs/uix/kv/screens/calls/call_info.kv"
+    },
+    "call_link": {
+        "import": "from libs.uix.baseclass.screens.calls import CallLinkScreen",
+        "object": "CallLinkScreen()",
+        "kv": "libs/uix/kv/screens/calls/call_link.kv"
+    },
+    "new_call": {
+        "import": "from libs.uix.baseclass.screens.calls import NewCallScreen",
+        "object": "NewCallScreen()",
+        "kv": "libs/uix/kv/screens/calls/new_call.kv"
+    },
+
+
+
+    "chats": {
+        "import": "from libs.uix.baseclass.screens.chats import ChatsScreen",
+        "object": "ChatsScreen()",
+        "kv": "libs/uix/kv/screens/chats/chats.kv"
+    },
+    "chat": {
+        "import": "from libs.uix.baseclass.screens.chats import ChatScreen",
+        "object": "ChatScreen()",
+        "kv": "libs/uix/kv/screens/chats/chat.kv"
+    },
+    "new_chat": {
+        "import": "from libs.uix.baseclass.screens.chats import NewChatScreen",
+        "object": "NewChatScreen()",
+        "kv": "libs/uix/kv/screens/chats/new_chat.kv"
+    },
+
+
+    "contacts": {
+        "import": "from libs.uix.baseclass.screens.contacts import ContactsScreen",
+        "object": "ContactsScreen()",
+        "kv": "libs/uix/kv/screens/contacts/contacts.kv"
+    },
+    "new_contact": {
+        "import": "from libs.uix.baseclass.screens.contacts import NewContactScreen",
+        "object": "NewContactScreen()",
+        "kv": "libs/uix/kv/screens/contacts/new_contact.kv"
+    },
+    "create_contact": {
+        "import": "from libs.uix.baseclass.screens.contacts import CreateContactScreen",
+        "object": "CreateContactScreen()",
+        "kv": "libs/uix/kv/screens/contacts/create_contact.kv"
+    },
+
+    "updates": {
+        "import": "from libs.uix.baseclass.screens.updates import UpdatesScreen",
+        "object": "UpdatesScreen()",
+        "kv": "libs/uix/kv/screens/updates/updates.kv"
+    },
+
+
+    "settings": {
+        "import": "from libs.uix.baseclass.screens.settings import SettingsScreen",
+        "object": "SettingsScreen()",
+        "kv": "libs/uix/kv/screens/settings/settings_screen.kv"
+    },
+    "settings_chats": {
+        "import": "from libs.uix.baseclass.screens.settings import SettingsChatsScreen",
+        "object": "SettingsChatsScreen()",
+        "kv": "libs/uix/kv/screens/settings/settings_chats.kv"
+    },
+    "settings_account": {
+        "import": "from libs.uix.baseclass.screens.settings import SettingsAccountScreen",
+        "object": "SettingsAccountScreen()",
+        "kv": "libs/uix/kv/screens/settings/settings_account.kv"
+    },
+    "settings_help": {
+        "import": "from libs.uix.baseclass.screens.settings import SettingsHelpScreen",
+        "object": "SettingsHelpScreen()",
+        "kv": "libs/uix/kv/screens/settings/settings_help.kv"
+    },
+    "settings_account_details": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_privacy": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_avatar": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_notifications": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_storage_data": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_language": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+    "settings_share": {
+        "import": "from libs.uix.baseclass.screens.settings import NotImplemented",
+        "object": "NotImplemented()",
+        "kv": "libs/uix/kv/screens/settings/not_implemented.kv"
+    },
+
+
+    "camera": {
+        "import": "from libs.uix.baseclass.screens.camera import CameraScreen",
+        "object": "CameraScreen()",
+        "kv": "libs/uix/kv/screens/camera.kv"
+    }
+}

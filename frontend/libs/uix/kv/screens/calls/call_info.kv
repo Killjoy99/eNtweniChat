@@ -1,0 +1,87 @@
+<CallInfoScreen>
+    name: "call_info"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release: root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Call info"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "message-outline"
+            MDActionTopAppBarButton:
+                icon: "dots-vertical"
+                # on_release: app.menu.open()
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        do_scroll_y: True
+        MDList:
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    source: root.avatar3
+
+                MDListItemHeadlineText:
+                    text: "+263 77 675 1033"
+
+                MDListItemSupportingText:
+                    text: "User's Status for sure"
+
+                MDActionTopAppBarButton:
+                    icon: "phone"
+                MDActionTopAppBarButton:
+                    icon: "video"
+
+            MDDivider:
+            MDListItem:
+                MDListItemLeadingIcon:
+                    pos_hint: {'center_y': .5}
+                    icon: "arrow-bottom-left"
+
+                MDListItemHeadlineText:
+                    text: "Incoming"
+
+                MDListItemSupportingText:
+                    text: "20:33"
+
+                MDListItemTertiaryText:
+                    text: "48:34  18.9MB"
+                    pos_hint: {'center_y': .5}
+
+                # MDListItemTrailingIcon:
+                #     icon: "phone-outline"
+
+
+
+
+
+
+
+
+
+
+    MDButton:
+        id: reload_button
+        style: "elevated"
+        pos_hint: {"top": .1}
+        on_release: app.simulate_button_click()
+
+        MDButtonIcon:
+            icon: "reload"
+            color: "red"
+            md_bg_color: "green"
+
+
+        MDButtonText:
+            text: "HOT RELOAD"
+            color: "red"

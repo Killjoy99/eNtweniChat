@@ -1,0 +1,70 @@
+<NewContactScreen>
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    app.nav_manager.back()
+
+        MDTopAppBarTitle:
+            text: "New contact"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        # pos_hint: {"top": 0.9}
+
+        MDTextField:
+            id: first_name
+            mode: "outlined"
+            adaptive_width: True
+            # pos_hint: {'top': 1}
+            focus_next: last_name
+
+            MDTextFieldLeadingIcon:
+                icon: "account"
+
+            MDTextFieldHintText:
+                text: "First Name"
+
+        MDTextField:
+            id: last_name
+            mode: "outlined"
+            adaptive_width: True
+            focus_next: phone_number
+
+            MDTextFieldLeadingIcon:
+                icon: ""
+
+            MDTextFieldHintText:
+                text: "Last Name"
+
+        MDTextField:
+            id: phone_number
+            mode: "outlined"
+            adaptive_width: True
+            input_type: "number"
+
+            MDTextFieldLeadingIcon:
+                icon: "phone"
+
+            MDTextFieldHintText:
+                text: "Phone"
+
+        MDButton:
+            id: save_contact
+            style: "elevated"
+            pos_hint: {"center_x": .5}
+            # on_release: app.simulate_button_click()
+
+            MDButtonIcon:
+                icon: "contacts"
+
+            MDButtonText:
+                text: "    Save    "

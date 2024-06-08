@@ -1,0 +1,56 @@
+<UpdatesScreen>
+    name: "Updates"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+            
+        MDTopAppBarTitle:
+            text: "Updates"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "camera-outline"
+            MDActionTopAppBarButton:
+                icon: "magnify"
+            MDActionTopAppBarButton:
+                icon: "dots-vertical"
+                # on_release: app.menu.open()
+    
+    MDScrollView:
+        pos_hint: {'top': 0.9}
+        MDList:
+            id: updates_list_container
+            MDListItem:
+                MDListItemLeadingAvatar:
+                    # source: app.root.get_screen("settings").ids.profile_picture.source
+
+                MDListItemHeadlineText:
+                    text: "My status"
+
+                MDListItemSupportingText:
+                    text: "Tap to add status update"
+            MDDivider:
+
+    MDIconButton:
+        style: "filled"
+        size_hint: (None, None)
+        size: dp(40), dp(40)
+        radius: dp(10)
+        icon: "pencil"
+        pos_hint: {"center_x": .9, "center_y": .22}
+        # on_release: app._send_message("ws://127.0.0.1:8989/ws",root.ids.message.text)
+
+    MDIconButton:
+        style: "filled"
+        size_hint: (None, None)
+        size: dp(56), dp(56)
+        radius: dp(10)
+        icon: "camera"
+        pos_hint: {"center_x": .9, "center_y": .15}
+        # on_release: app._send_message("ws://127.0.0.1:8989/ws",root.ids.message.text)

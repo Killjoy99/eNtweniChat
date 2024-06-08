@@ -1,0 +1,69 @@
+<CallLinkScreen>
+    name: "call_link"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Create call link"
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        do_scroll_y: True
+        MDList:
+            adaptive_height: True
+
+            MDListItem:
+                MDListItemHeadlineText:
+                    adaptive_height: True
+                    text: "Anyone with eNtweniChat can use this link to join this call. Only share with people you trust"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: root.call_type
+
+                MDListItemHeadlineText:
+                    text: root.call_url
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: ""
+
+                MDListItemHeadlineText:
+                    text: "Call type"
+                MDListItemSupportingText:
+                    text: root.call_type
+
+
+            MDDivider:
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "share"
+
+                MDListItemHeadlineText:
+                    text: "Send link via eNtweniChat"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "content-copy"
+
+                MDListItemHeadlineText:
+                    text: "Copy link"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "share-variant"
+
+                MDListItemHeadlineText:
+                    text: "Share link"

@@ -1,0 +1,17 @@
+<TestScreen>
+    name: "test"
+    # md_bg_color: app.theme_cls.backgroundColor
+
+    MDTabsPrimary:
+        id: tabs
+        pos_hint: {'bottom': 1}
+        # indicator_height: 0
+        # indicator_duration: 0.1
+
+        # MDDivider:
+        MDTabsCarousel:
+            id: tab_content
+            pos_hint: {'top': 1}
+            size_hint_y: None
+            height: dp(60)
+            # height: root.height - tabs.ids.tab_scroll.height

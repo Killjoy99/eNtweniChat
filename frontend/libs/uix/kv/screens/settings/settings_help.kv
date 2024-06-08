@@ -1,0 +1,58 @@
+<SettingsHelpScreen>
+    name: "settings_help"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        style: "elevated"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Help"
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        MDList:
+            MDDivider:
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "progress-question"
+
+                MDListItemHeadlineText:
+                    text: "Help Centre"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "account-multiple"
+
+                MDListItemHeadlineText:
+                    text: "Contact us"
+                MDListItemSupportingText:
+                    text: "Questions? Need help?"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "file-document"
+
+                MDListItemHeadlineText:
+                    text: "Terms and Privacy Policy"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "information-outline"
+
+                MDListItemHeadlineText:
+                    text: "App info"
+
+    MDListItemSupportingText:
+        pos_hint: {'center_x': 0.5,}
+        # text: app.config_manager.get_setting(['SETTINGS', 'HELP', "app_version"])

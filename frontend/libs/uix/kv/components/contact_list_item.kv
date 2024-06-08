@@ -1,0 +1,10 @@
+<ContactListItem>
+    on_release: root.select_contact(self.name)
+    MDListItemLeadingAvatar:
+        source: root.avatar
+
+    MDListItemHeadlineText:
+        text: root.name
+
+    MDListItemSupportingText:
+        text: root.status

@@ -1,0 +1,71 @@
+<ColorDialog>
+    name: "color_dialog"
+    size_hint_x: .8
+
+    MDDialogHeadlineText:
+        text: "Choose App Color"
+
+    MDDialogContentContainer:
+        id: theme_items
+        MDList:
+            MDListItem:
+                theme_bg_color: "Custom"
+                md_bg_color: self.theme_cls.transparentColor
+                MDListItemTertiaryText:
+                    text: "Default"
+                MDListItemTrailingCheckbox:
+                    id: default
+                    name: "Teal"
+                    group: "group"
+
+            MDListItem:
+                theme_bg_color: "Custom"
+                md_bg_color: self.theme_cls.transparentColor
+                MDListItemTertiaryText:
+                    text: "Orange"
+                MDListItemTrailingCheckbox:
+                    id: orange
+                    name: "Orange"
+                    group: "group"
+
+            MDListItem:
+                theme_bg_color: "Custom"
+                md_bg_color: self.theme_cls.transparentColor
+                MDListItemTertiaryText:
+                    text: "Deep Pink"
+                MDListItemTrailingCheckbox:
+                    id: deeppink
+                    name: "Deeppink"
+                    group: "group"
+
+            MDListItem:
+                theme_bg_color: "Custom"
+                md_bg_color: self.theme_cls.transparentColor
+                MDListItemTertiaryText:
+                    text: "Blue"
+                MDListItemTrailingCheckbox:
+                    id: blue
+                    name: "Blue"
+                    group: "group"
+
+    MDDialogButtonContainer:
+        pos_hint: {'right': 1}
+        spacing: "8dp"
+        # MDWidget:
+        MDButton:
+            on_release: root.dismiss()
+            MDButtonText:
+                text: "Cancel"
+                style: "text"
+
+        MDButton:
+            on_press:
+                app.change_color(
+                root.ids.default.name if root.ids.default.active
+                else root.ids.orange.name if root.ids.orange.active
+                else root.ids.blue.name if root.ids.blue.active
+                else root.ids.deeppink.name)
+            on_release: root.dismiss()
+            MDButtonText:
+                text: "Ok"
+                style: "text"

@@ -1,0 +1,80 @@
+<CreateContactScreen>
+    md_bg_color: self.theme_cls.backgroundColor
+    id: create_contact
+    name: "create_contact"
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "New contact"
+
+    MDBoxLayout:
+        id: test_text_box
+        orientation: 'vertical'
+        pos_hint: {"y": .6}
+
+        MDTextField:
+            id: firstname
+            mode: "outlined"
+            required: True
+            on_text_validate: lastname.focus = True
+            adaptive_width: True
+            pos_hint: {'center_y': .5}
+
+            MDTextFieldLeadingIcon:
+                icon: "account"
+                icon_color_focus: "lightgreen"
+
+            MDTextFieldHintText:
+                text: "First Name"
+
+        MDTextField:
+            id: lastname
+            mode: "outlined"
+            required: True
+            on_text_validate: phonenumber.focus = True
+            adaptive_width: True
+            pos_hint: {'center_y': .5}
+
+            MDTextFieldLeadingIcon:
+                icon: ""
+
+            MDTextFieldHintText:
+                text: "Last Name"
+
+        MDTextField:
+            id: phonenumber
+            mode: "outlined"
+            adaptive_width: True
+            required: True
+            width: 240
+            pos_hint: {'center_y': .5}
+
+            MDTextFieldLeadingIcon:
+                icon: "phone"
+
+            MDTextFieldHintText:
+                text: "Phone"
+
+        MDButton:
+            id: save_contact
+            style: "elevated"
+            pos_hint: {"center_x": .5}
+            on_release:
+                root.save_contact(root.ids.firstname.text, root.ids.lastname.text, root.ids.phonenumber.text)
+
+            MDButtonIcon:
+                icon: "contacts"
+
+            MDButtonText:
+                text: "      Save      "

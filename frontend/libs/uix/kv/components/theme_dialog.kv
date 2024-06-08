@@ -1,0 +1,23 @@
+<ThemeDialog>
+    name: "theme_dialog"
+    size_hint_x: .8
+
+    MDDialogHeadlineText:
+        text: "Current Theme: " + app.theme_cls.theme_style
+
+    MDDialogButtonContainer:
+        pos_hint: {'center_x': 0.5}
+        spacing: "8dp"
+        MDButton:
+            on_release: root.dismiss()
+            MDButtonText:
+                text: "Cancel"
+                style: "text"
+
+        MDButton:
+            # on_press: app.change_theme(root.ids.dark.name if root.ids.dark.active else root.ids.light.name)
+            on_press: app.change_theme()
+            on_release: root.dismiss()
+            MDButtonText:
+                text: "Change"
+                style: "text"

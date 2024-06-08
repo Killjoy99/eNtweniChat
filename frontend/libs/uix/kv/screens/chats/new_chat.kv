@@ -1,0 +1,63 @@
+<NewChatScreen>
+    name: "new_chat"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Select contact"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "magnify"
+            MDActionTopAppBarButton:
+                icon: "dots-vertical"
+                # on_release: app.menu.open()
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+
+        MDList:
+            id: contact_list_container
+            adaptive_height: True
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "account-multiple"
+
+                MDListItemHeadlineText:
+                    text: "New group"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("create_contact", "down")
+                MDListItemLeadingIcon:
+                    icon: "account-plus"
+
+                MDListItemHeadlineText:
+                    text: "New contact"
+
+            MDListItem:
+                MDListItemLeadingIcon:
+                    icon: "account-group"
+
+                MDListItemHeadlineText:
+                    text: "New community"
+
+            MDDivider:
+            MDListItem:
+                MDListItemTertiaryText:
+                    text: "Contacts on eNtweniChat"
+            MDDivider:
+
+            # ContactListItem:

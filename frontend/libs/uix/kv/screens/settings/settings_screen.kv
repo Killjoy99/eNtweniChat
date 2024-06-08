@@ -1,0 +1,156 @@
+<SettingsScreen>
+    name: "settings"
+    md_bg_color: app.theme_cls.backgroundColor
+
+    MDTopAppBar:
+        id: topbar
+        type: "small"
+        pos_hint: {'top': 1}
+
+        MDTopAppBarLeadingButtonContainer:
+
+            MDActionTopAppBarButton:
+                icon: "arrow-left"
+                on_release:
+                    root.manager.back()
+
+        MDTopAppBarTitle:
+            text: "Settings"
+
+        MDTopAppBarTrailingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: "magnify"
+                # on_release: app.menu.open()
+
+    MDScrollView:
+        pos_hint: {'top': .9}
+        do_scroll_y: True
+        # effect_cls: "ScrollEffect"
+
+        MDList:
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_account_details", "left")
+
+                MDListItemLeadingAvatar:
+                    id: profile_picture
+                    source: root.avatar
+
+                MDListItemHeadlineText:
+                    text: "Serpent99"
+
+                MDListItemSupportingText:
+                    text: "Phitsoe"
+
+                MDActionTopAppBarButton:
+                    icon: "qrcode"
+                MDActionTopAppBarButton:
+                    icon: "chevron-down-circle-outline"
+
+            MDDivider:
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_account", "up")
+
+                MDListItemLeadingIcon:
+                    icon: "key-variant"
+
+                MDListItemHeadlineText:
+                    text: "Account"
+
+                MDListItemSupportingText:
+                    text: "Security notifications, change number"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_privacy", "left")
+                MDListItemLeadingIcon:
+                    icon: "lock-outline"
+
+                MDListItemHeadlineText:
+                    text: "Privacy"
+
+                MDListItemSupportingText:
+                    text: "Block contact, disappearing messages"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_avatar", "left")
+                MDListItemLeadingIcon:
+                    icon: "emoticon-plus-outline"
+
+                MDListItemHeadlineText:
+                    text: "Avatar"
+
+                MDListItemSupportingText:
+                    text: "Create, edit, profile photo"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_chats")
+                MDListItemLeadingIcon:
+                    icon: "message-outline"
+
+                MDListItemHeadlineText:
+                    text: "Chats"
+
+                MDListItemSupportingText:
+                    text: "Theme, wallpapers, chat history"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_notifications", "left")
+                MDListItemLeadingIcon:
+                    icon: "bell-outline"
+
+                MDListItemHeadlineText:
+                    text: "Notifications"
+
+                MDListItemSupportingText:
+                    text: "Message, group & call tones"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_storage_data", "left")
+                MDListItemLeadingIcon:
+                    icon: "chart-arc"
+
+                MDListItemHeadlineText:
+                    text: "Storage and data"
+
+                MDListItemSupportingText:
+                    text: "Network usage, auto download"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_language", "left")
+                MDListItemLeadingIcon:
+                    icon: "web"
+
+                MDListItemHeadlineText:
+                    text: "App language"
+
+                MDListItemSupportingText:
+                    text: "English (device's language)"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_help", "up")
+                MDListItemLeadingIcon:
+                    icon: "progress-question"
+
+                MDListItemHeadlineText:
+                    text: "Help"
+
+                MDListItemSupportingText:
+                    text: "Help centre, contact us, privacy policy"
+
+            MDListItem:
+                on_release:
+                    root.manager.push("settings_share", "left")
+                MDListItemLeadingIcon:
+                    icon: "account-multiple"
+
+                MDListItemHeadlineText:
+                    text: "Invite a friend"
